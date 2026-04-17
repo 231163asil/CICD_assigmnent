@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Piazza — Authentic Italian Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">La<span>Piazza</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#footer">Contact</a></li>
+      <li><a href="#menu" class="nav-cta">Order Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Est. Naples, 1987</div>
+      <h1 class="hero-title">
+        Crafted with<br/>
+        <em>Passion</em>,<br/>
+        Served with Soul.
+      </h1>
+      <p class="hero-desc">
+        Authentic Neapolitan pizza made from hand-stretched dough,
+        San Marzano tomatoes, and the finest Italian ingredients.
+        Every slice tells a story.
+      </p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn-primary">🍕 Explore Menu</a>
+        <a href="#about" class="btn-outline">Our Story →</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num" id="statRecipes">—</div>
+          <div class="stat-label">Recipes</div>
+        </div>
+        <div>
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Avg Rating</div>
+        </div>
+        <div>
+          <div class="stat-num">20min</div>
+          <div class="stat-label">Avg Prep</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="pizza-plate">
+        <span class="pizza-emoji">🍕</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="about-left">
+      <div class="about-tag">Our Story</div>
+      <h2 class="about-title">Rooted in<br/><em>Italian Tradition</em></h2>
+      <p class="about-text">
+        La Piazza was born from a simple obsession: making pizza the way
+        Nonna used to make it. We import our flour from Naples, use only
+        wood-fired ovens, and let our dough ferment for 72 hours. The
+        result? A crust that's crispy outside, airy inside, and utterly
+        unforgettable.
+      </p>
+    </div>
+    <div class="about-features">
+      <div class="feature-card">
+        <div class="feature-icon">🔥</div>
+        <div class="feature-title">Wood-Fired</div>
+        <div class="feature-desc">Cooked at 485°C for that perfect char and smoky depth.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-title">Fresh &amp; Local</div>
+        <div class="feature-desc">Seasonal ingredients sourced daily from local producers.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🇮🇹</div>
+        <div class="feature-title">Authentic</div>
+        <div class="feature-desc">Certified by the Associazione Verace Pizza Napoletana.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👨‍🍳</div>
+        <div class="feature-title">Craft Dough</div>
+        <div class="feature-desc">72-hour cold-fermented dough — light, digestible, delicious.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DIVIDER STRIP ── -->
+  <div class="divider-strip">
+    <div class="divider-item">🍅 San Marzano Tomatoes</div>
+    <div class="divider-sep">✦</div>
+    <div class="divider-item">🧀 Fresh Mozzarella di Bufala</div>
+    <div class="divider-sep">✦</div>
+    <div class="divider-item">🌾 Imported Tipo 00 Flour</div>
+    <div class="divider-sep">✦</div>
+    <div class="divider-item">🔥 Wood-Fired Oven</div>
+  </div>
+
+  <!-- ── MENU ── -->
+  <section id="menu">
+    <div class="section-header">
+      <div class="section-tag">Fresh from the Oven</div>
+      <h2 class="section-title">Our Full Menu</h2>
+      <p class="section-sub">
+        Recipes fetched live from our kitchen API — browse, search, and filter to find your perfect slice.
+      </p>
+    </div>
+
+    <div class="menu-controls">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search by name or ingredient…" />
+      </div>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="quick">Quick (≤30 min)</button>
+      <button class="filter-btn" data-filter="top">Top Rated (4.5+)</button>
+    </div>
+
+    <div class="results-count" id="resultsCount"></div>
+
+    <div class="pizza-grid" id="pizzaGrid">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <div class="loading-text">Fetching our finest recipes…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-brand-name">La<span>Piazza</span></div>
+        <p class="footer-tagline">
+          Authentic Italian pizza, crafted with tradition<br/>
+          and served with warmth since 1987.
+        </p>
+        <div class="footer-social">
+          <div class="social-btn" title="Instagram">📸</div>
+          <div class="social-btn" title="Facebook">📘</div>
+          <div class="social-btn" title="Twitter">🐦</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Visit Us</div>
+        <ul class="footer-links">
+          <li><a href="#">📍 12 Via Roma, Naples</a></li>
+          <li><a href="#">📞 +39 081 123 4567</a></li>
+          <li><a href="#">✉️ hello@lapiazza.it</a></li>
+          <li><a href="#">🕐 Daily 12:00 – 23:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 La Piazza. All rights reserved.</span>
+      <span>Designed &amp; built by <span class="footer-author">asil talbeeshi</span></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
